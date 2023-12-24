@@ -3,7 +3,10 @@
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs";
 
-  nixConfig.post-build-hook = "whoami";
+  nixConfig = {
+    post-build-hook = "whoami";
+    accept-flake-config = true;
+  };
 
   outputs = {
     self,
